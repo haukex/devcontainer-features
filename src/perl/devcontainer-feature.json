@@ -1,0 +1,13 @@
+{
+    "name": "Perl",
+    "id": "perl",
+    "version": "1.0.0",
+    "description": "Larry Wall's Practical Extraction und Report Language",
+    "options": {
+        "local_lib": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to initialize local::lib in .bashrc"
+        }
+    }
+}

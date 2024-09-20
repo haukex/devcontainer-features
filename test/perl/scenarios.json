@@ -1,9 +1,9 @@
 {
-    "hello": {
+    "no_local_lib": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "hello": {
-                "greeting": "hello"
+            "perl": {
+                "local_lib": false
             }
         }
     }
