@@ -14,7 +14,7 @@ case "${ID}" in
         export DEBIAN_FRONTEND=noninteractive
         if ! dpkg -s "${DEBIAN_PACKAGES[@]}" >/dev/null 2>&1; then
             [ "$( find /var/lib/apt/lists/* | wc -l )" = "0" ] && apt-get update -y
-            apt-get -y install "${DEBIAN_PACKAGES[@]}"
+            apt install -y "${DEBIAN_PACKAGES[@]}"
             rm -rf /var/lib/apt/lists/*
         fi
     ;;

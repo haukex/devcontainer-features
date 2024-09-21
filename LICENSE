@@ -1,6 +1,11 @@
 MIT License
 
-Copyright (c) 2024 Hauke Dämpfling <https://www.zero-g.net/>
+Copyright (c) 2024 Hauke Dämpfling <haukex@zero-g.net>
+
+This repository made use of the "github.com/devcontainers/feature-starter"
+template repository which is:
+
+Copyright (c) 2022 Microsoft Corporation
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
