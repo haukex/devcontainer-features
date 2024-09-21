@@ -10,8 +10,9 @@ Although Perl may already be preinstalled into many containers,
 this feature adds a few things that make bootstrapping Perl projects easier:
 
 - [`cpanm`](https://metacpan.org/dist/App-cpanminus/view/bin/cpanm) for package management
-- [`local::lib`](https://metacpan.org/pod/local::lib) so CPAN modules can be installed into
+- [`local::lib`](https://metacpan.org/pod/local::lib), so CPAN modules can be installed into
   the user's home directory without root instead of the system Perl
+  - `local::lib` initialization is added to the user's `.bashrc` (can be disabled, see below)
 - `IO::Socket::SSL`, so that Perl's core module
   [`HTTP::Tiny`](https://perldoc.perl.org/HTTP::Tiny) has SSL support
 - `build-essential`/`build-base` for basic compiler tooling for Perl module installation
@@ -20,11 +21,10 @@ this feature adds a few things that make bootstrapping Perl projects easier:
 
 Please note that this feature uses whatever version of `perl` and the above modules that
 is available through the system's package manager. If you need a specific version of Perl,
-consider using e.g. [Perlbrew](https://perlbrew.pl/) or a
+consider using e.g. [Perlbrew](https://perlbrew.pl/) or an
 [official Perl Docker image](https://hub.docker.com/_/perl).
 
-To use this, incorporate the following into your
-[`devcontainer.json`](https://aka.ms/devcontainer.json):
+Example [`devcontainer.json`](https://aka.ms/devcontainer.json):
 
 ```jsonc
 {
