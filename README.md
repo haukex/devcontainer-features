@@ -18,30 +18,25 @@ this feature adds a few things that make bootstrapping Perl projects easier:
   (may already be preinstalled on many containers)
 - `perl-doc` so `perldoc`/manpages are available
 
-Please note that this feature uses whatever version of `perl` that is available through
-the system's package manager. If you need a specific version of Perl, consider using
-e.g. [Perlbrew](https://perlbrew.pl/) or a [Docker Image](https://hub.docker.com/_/perl).
+Please note that this feature uses whatever version of `perl` and the above modules that
+is available through the system's package manager. If you need a specific version of Perl,
+consider using e.g. [Perlbrew](https://perlbrew.pl/) or a
+[official Perl Docker image](https://hub.docker.com/_/perl).
 
-To use this, incorporate the following into your `devcontainer.json`,
-where the `cpanm` command is of course optional depending on your project:
+To use this, incorporate the following into your
+[`devcontainer.json`](https://aka.ms/devcontainer.json):
 
 ```jsonc
 {
+    // use whatever Debian/Ubuntu/Alpine base image you like here:
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
         "ghcr.io/haukex/devcontainer-features/perl:1": {}
     },
+    // optional depending on your project:
     "postCreateCommand": "cpanm --installdeps ."
 }
 ```
 
-If you don't want `local::lib`'s environment variables to be added to your `.bashrc`:
-
-```jsonc
-{
-    "features": {
-        "ghcr.io/haukex/devcontainer-features/perl:1": {
-            "local_lib": false
-        }
-    }
-}
-```
+If you don't want `local::lib`'s environment variables to be added to your `.bashrc`,
+you may add the `"local_lib": false` option.
