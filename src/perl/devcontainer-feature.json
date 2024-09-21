@@ -1,7 +1,7 @@
 {
     "name": "Perl",
     "id": "perl",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Larry Wall's Practical Extraction und Report Language",
     "options": {
         "local_lib": {

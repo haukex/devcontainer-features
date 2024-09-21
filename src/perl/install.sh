@@ -14,7 +14,7 @@ case "${ID}" in
         export DEBIAN_FRONTEND=noninteractive
         if ! dpkg -s "${DEBIAN_PACKAGES[@]}" >/dev/null 2>&1; then
             [ "$( find /var/lib/apt/lists/* | wc -l )" = "0" ] && apt-get update -y
-            apt install -y "${DEBIAN_PACKAGES[@]}"
+            apt-get install -y "${DEBIAN_PACKAGES[@]}"
             rm -rf /var/lib/apt/lists/*
         fi
     ;;
@@ -22,6 +22,10 @@ case "${ID}" in
         if ! apk -e info "${ALPINE_PACKAGES[@]}" >/dev/null 2>&1; then
             apk add --no-cache "${ALPINE_PACKAGES[@]}"
         fi
+    ;;
+    *)
+        echo "ERROR: This feature is not supported on this distribution."
+        exit 1
     ;;
 esac
 
